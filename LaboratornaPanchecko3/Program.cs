@@ -141,6 +141,19 @@
             return -1;
         }
 
+        static int LastNegative(int[] mas)     // Последний отрицательный элемент в массиве
+        {
+            int neg = -1;
+            for (int i = 0; i < mas.Length; i++)
+            {
+                if (mas[i] < 0)
+                {
+                    neg = i;
+                }
+            }
+            return neg;
+        }
+
         static int LastPositive(int[] mas)  // Последний положительный элемент
         {
             int index = -1;
@@ -513,12 +526,82 @@
                 Console.Write("{0} ", item);
             }
 
-            Console.WriteLine(); */
+            Console.WriteLine(); 
 
             // 21
+            int[] array21 = UserInput();
 
+            List<int> listPos = new List<int>();
+            List<int> listNeg = new List<int>();
+            foreach (int item in array21)
+            {
+                if (item > 0)
+                {
+                    listPos.Add(item);
+                }
+                else
+                {
+                    listNeg.Add(item);  
+                }
+            }
+            Console.WriteLine("Положительные элементы:");
+            foreach (int item in listPos)
+            {
+                Console.Write("{0} ", item);
+            }
+            Console.WriteLine("\nОтрицательные элементы:");
+            foreach (int item in listNeg)
+            {
+                Console.Write("{0} ", item);
+            }
 
+            Console.WriteLine(); 
 
+            // 22
+            int[] array22 = UserInput();
+            int nN22 = array22[FirstNegative(array22)];
+            int lN22 = array22[LastNegative(array22)];
+            Console.WriteLine("Сумма первого и последнего отрицательного элемента: {0}", nN22 +lN22);
+
+            Console.WriteLine(); 
+
+            // 23
+            int[] array23 = UserInput();
+            int f23;
+            int l23;
+            bool f = false;
+            bool f2 = false;
+            foreach (int item in array23)
+            {
+                if (item % 2 != 0 & f == false)
+                {
+                    f23 = item;
+                    f= true;
+                }
+                else
+                {
+                    l23 = item;
+                    f2 = true;
+                }
+            }
+            if (f == true & f2 == true)
+            {
+                Console.WriteLine("Сумма первого и последнего нечетного элемента: {0}", f23 - l23);
+            }
+            else
+            {
+                Console.WriteLine("Нечетных элементов нет: {0}", f23 - l23);
+            }
+
+            Console.WriteLine(); 
+
+            // 24
+            int[] array24 = UserInput();
+            Console.WriteLine("Индекс наибольшего - {0}, индекс наименьшего - {1}", Array.IndexOf(array24, array24.Max()), Array.IndexOf(array24, array24.Min()));
+
+            Console.WriteLine(); */
+
+            // 25
 
 
         }
