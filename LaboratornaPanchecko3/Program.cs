@@ -87,8 +87,8 @@
         static Tuple<int[], int[]> CreateTwoArray(int[] mas)    // Два массива
         {
             int size = mas.Length / 2;
-            int[] array1 = new int[size + 1];
-            int[] array2 = new int[mas.Length - size];
+            int[] array1 = new int[size + 1];   // четные
+            int[] array2 = new int[mas.Length - size];  // нечетные
             int chet, nechet;
             chet = 0;
             nechet = 0;
@@ -108,7 +108,7 @@
             return Tuple.Create(array1, array2);
         }
 
-        static double Sum(int[] mas)
+        static double Sum(int[] mas)    // Сумма элементов массива
         {
             int sum = 0;
             for (int i = 0; i < mas.Length; i++)
@@ -129,7 +129,7 @@
             return average;
         }
 
-        static int FirstNegative(int[] mas)
+        static int FirstNegative(int[] mas)     // Первый отрицательный элемент в массиве
         {
             for (int i = 0; i < mas.Length; i++)
             {
@@ -141,7 +141,7 @@
             return -1;
         }
 
-        static int LastPositive(int[] mas)
+        static int LastPositive(int[] mas)  // Последний положительный элемент
         {
             int index = -1;
             for (int i = 0; i < mas.Length; i++)
@@ -154,11 +154,52 @@
             return index;
         }
 
+        static int FirstPositive(int[] mas)     // Первый положительный элемент в массиве
+        {
+            for (int i = 0; i < mas.Length; i++)
+            {
+                if (mas[i] > 0)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        static int SumPositive(int[] mas)   // Сумма только положительных элементов массива
+        {
+            int sum = 0;
+            foreach (int elem in mas)
+            {
+                if (elem > 0)
+                {
+                    sum += elem;
+                }
+            }
+            return sum;
+        }
+
+        static int MaxNegative(int[] mas)   // Максимальный отрицательный элемент массива
+        {
+            int maxNeg= -1;
+            for (int i = 0; i < mas.Length; i++)
+            {
+                if (mas[i] < 0 & maxNeg == -1)
+                {
+                    maxNeg = i;
+                }
+                else if (mas[i] < 0 & mas[maxNeg] < mas[i])
+                {
+                    maxNeg = i;
+                }
+            }
+            return maxNeg;
+        }
 
         static void Main(string[] args)
         {
             // 1
-            int[] array = UserInput();
+            /*int[] array = UserInput();
             int negative = NegativeAmount(array);
             int positive = PositiveAmount(array);
             double average = AverageSum(array);
@@ -187,6 +228,113 @@
             {
                 Console.WriteLine("Массив не удовлетворяет входным данным");
             }
+
+            Console.WriteLine();
+
+            //4
+            int[] array4 = UserInput();
+            int max = array4.Max();
+            int index = Array.LastIndexOf(array4, max);
+            Console.WriteLine("Количество отрицательных элементов перед наибольшим положительным числом - {0}", NegativeAmount(array4[1..index]));
+
+            Console.WriteLine();
+
+            //5
+            int[] array5 = UserInput();
+            int lstP1, fstP1;
+            lstP1 = LastPositive(array5);
+            fstP1 = FirstPositive(array5);
+            int j = array5[lstP1];
+            array5[lstP1] = array5[fstP1];
+            array5[fstP1] = j;
+
+            Console.WriteLine();
+
+            //6
+            int[] array6 = UserInput();
+            Console.WriteLine("Сумма элементов массива - {0}, среднее арифм. - {1}", Sum(array6), AverageSum(array6);
+
+            Console.WriteLine();
+
+            // 7
+            int[] array7 = UserInput();
+            int sum = 0;
+            foreach (int elem in array7)
+            {
+                if (elem > 0)
+                {
+                    sum += elem;
+                }
+            }
+            Console.WriteLine("Сумма положительных элементов массива - {0}", sum);
+
+            Console.WriteLine();
+
+            // 8
+            int[] array8 = UserInput();
+            Console.WriteLine("Сумма четных элементов массива - {0}", Sum(CreateTwoArray(array8).Item1));
+
+            Console.WriteLine();
+
+            // 9
+            int[] array9 = UserInput();
+            int maxPositive = array9.Max();
+            int maxNegativeValue = MaxNegative(array9);
+            Console.WriteLine("Максимальный отрицательный - {0}, Максимальный положительный - {1}", maxNegativeValue, maxPositive);
+
+            Console.WriteLine(); 
+
+            // 10
+            int[] array10 = UserInput();
+            List<int> indexes = new List<int>();
+            for (int i = 0; i < array10.Length; i++)
+            {
+                if (array10[i] > 0)
+                {
+                    indexes.Add(i);
+                }
+            }
+            Console.Write("Индексы положительных элементов - ");
+            foreach (int i in indexes)
+            {
+                Console.Write("{0} ", i);
+            }
+
+            Console.WriteLine(); 
+
+            // 11
+            int[] array11 = UserInput();
+            double sum1 = 0;
+            foreach (int item in array11)
+            {
+                sum1 += Math.Abs(item);
+            }
+            Console.WriteLine("Среднее арифметическое - {0:f3}", sum1/array11.Length);
+
+            Console.WriteLine(); 
+
+            // 12
+            int[] array12 = UserInput();
+            int c = 0;
+            int i12 = -1;
+            for (int i = 0; i < array12.Length; i++)
+            {
+                if (array12[i] > 0 & c < 3)
+                {
+                    c++;
+                }
+                else if (array12[i] > 0 & c > 3)
+                {
+                    c = array12[i];
+                    i12 = i;
+                    break;
+                }
+            }
+            Console.WriteLine("Третий положительный элемент и его индекс - {0}, {1}", c, i12);
+
+            Console.WriteLine(); */
+
+            // 13
 
         }
 
