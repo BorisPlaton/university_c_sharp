@@ -1,0 +1,16 @@
+G:\Programs\Microsoft Visual Studio\2022\Community\Projects\LaboratornaPanchecko3\LaboratornaPanchecko3\bin\Debug\net6.0\numbers.txt
+G:\Programs\Microsoft Visual Studio\2022\Community\Projects\LaboratornaPanchecko3\LaboratornaPanchecko3\bin\Debug\net6.0\LaboratornaPanchecko3.exe
+G:\Programs\Microsoft Visual Studio\2022\Community\Projects\LaboratornaPanchecko3\LaboratornaPanchecko3\bin\Debug\net6.0\LaboratornaPanchecko3.deps.json
+G:\Programs\Microsoft Visual Studio\2022\Community\Projects\LaboratornaPanchecko3\LaboratornaPanchecko3\bin\Debug\net6.0\LaboratornaPanchecko3.runtimeconfig.json
+G:\Programs\Microsoft Visual Studio\2022\Community\Projects\LaboratornaPanchecko3\LaboratornaPanchecko3\bin\Debug\net6.0\LaboratornaPanchecko3.dll
+G:\Programs\Microsoft Visual Studio\2022\Community\Projects\LaboratornaPanchecko3\LaboratornaPanchecko3\bin\Debug\net6.0\LaboratornaPanchecko3.pdb
+G:\Programs\Microsoft Visual Studio\2022\Community\Projects\LaboratornaPanchecko3\LaboratornaPanchecko3\obj\Debug\net6.0\LaboratornaPanchecko3.csproj.AssemblyReference.cache
+G:\Programs\Microsoft Visual Studio\2022\Community\Projects\LaboratornaPanchecko3\LaboratornaPanchecko3\obj\Debug\net6.0\LaboratornaPanchecko3.GeneratedMSBuildEditorConfig.editorconfig
+G:\Programs\Microsoft Visual Studio\2022\Community\Projects\LaboratornaPanchecko3\LaboratornaPanchecko3\obj\Debug\net6.0\LaboratornaPanchecko3.AssemblyInfoInputs.cache
+G:\Programs\Microsoft Visual Studio\2022\Community\Projects\LaboratornaPanchecko3\LaboratornaPanchecko3\obj\Debug\net6.0\LaboratornaPanchecko3.AssemblyInfo.cs
+G:\Programs\Microsoft Visual Studio\2022\Community\Projects\LaboratornaPanchecko3\LaboratornaPanchecko3\obj\Debug\net6.0\LaboratornaPanchecko3.csproj.CoreCompileInputs.cache
+G:\Programs\Microsoft Visual Studio\2022\Community\Projects\LaboratornaPanchecko3\LaboratornaPanchecko3\obj\Debug\net6.0\LaboratornaPanchecko3.dll
+G:\Programs\Microsoft Visual Studio\2022\Community\Projects\LaboratornaPanchecko3\LaboratornaPanchecko3\obj\Debug\net6.0\refint\LaboratornaPanchecko3.dll
+G:\Programs\Microsoft Visual Studio\2022\Community\Projects\LaboratornaPanchecko3\LaboratornaPanchecko3\obj\Debug\net6.0\LaboratornaPanchecko3.pdb
+G:\Programs\Microsoft Visual Studio\2022\Community\Projects\LaboratornaPanchecko3\LaboratornaPanchecko3\obj\Debug\net6.0\LaboratornaPanchecko3.genruntimeconfig.cache
+G:\Programs\Microsoft Visual Studio\2022\Community\Projects\LaboratornaPanchecko3\LaboratornaPanchecko3\obj\Debug\net6.0\ref\LaboratornaPanchecko3.dll
