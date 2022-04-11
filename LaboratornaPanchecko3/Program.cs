@@ -181,7 +181,7 @@
 
         static int MaxNegative(int[] mas)   // Максимальный отрицательный элемент массива
         {
-            int maxNeg= -1;
+            int maxNeg = -1;
             for (int i = 0; i < mas.Length; i++)
             {
                 if (mas[i] < 0 & maxNeg == -1)
@@ -194,6 +194,88 @@
                 }
             }
             return maxNeg;
+        }
+
+        static int[] chetNechet(int[] mas)  // Замена четных и нечетных элементов местами
+        {
+            int[] newMas = new int[mas.Length];
+            if (newMas.Length % 2 != 0)
+            {
+                newMas[mas.Length - 1] = mas[mas.Length - 1];
+            }
+            if (mas.Length > 1)
+            {
+                for (int i = 0; i < mas.Length; i++)
+                {
+                    if (i + 1 < mas.Length)
+                    {
+                        newMas[i] = mas[i + 1];
+                        newMas[i + 1] = mas[i];
+                        i++;
+                    }
+                }
+            }
+            else
+            {
+                return mas;
+            }
+            return newMas;
+        }
+
+        static int[] sortMaxtoMin(int[] mas) // Сортировка по убыванию
+        {
+            int q;
+            for (int i = 0; i < mas.Length; i++)
+            {
+                for (int j = i + 1; j < mas.Length; j++)
+                {
+                    if (mas[i] < mas[j])
+                    {
+                        q = mas[i];     
+                        mas[i] = mas[j];
+                        mas[j] = q;
+                    }
+
+                }
+
+
+            }
+            return mas;
+        }
+
+        static int[] sortMintoMax(int[] mas)    // Сортировка по возрастанию
+        {
+            int q;
+            for (int i = 0; i < mas.Length; i++)
+            {
+                for (int j = i + 1; j < mas.Length; j++)
+                {
+                    if (mas[i] > mas[j])
+                    {
+                        q = mas[i];
+                        mas[i] = mas[j];
+                        mas[j] = q;
+                    }
+
+                }
+
+
+            }
+            return mas;
+        }
+
+        static int[] MoveOn(int[] mas, int value)   // Смещение элементов
+        {
+            List<int> list = new List<int>();
+            for (int i = mas.Length - value; i < mas.Length; i++)
+            {
+                list.Add(mas[i]);
+            }
+            for (int i = 0; i < mas.Length - value; i++)
+            {
+                list.Add(mas[i]);
+            }
+            return list.ToArray();
         }
 
         static void Main(string[] args)
@@ -332,9 +414,112 @@
             }
             Console.WriteLine("Третий положительный элемент и его индекс - {0}, {1}", c, i12);
 
-            Console.WriteLine(); */
+            Console.WriteLine();
 
             // 13
+            int[] array13 = UserInput();
+            int c = 0;
+            int i13 = -1;
+            for (int i = 0; i < array13.Length; i++)
+            {
+                if (array13[i] > 0 & c < 3)
+                {
+                    c++;
+                }
+                else if (array13[i] > 0 & c > 3)
+                {
+                    c = array13[i];
+                    i13 = i;
+                    break;
+                }
+            }
+            Console.WriteLine("Третий положительный элемент и его индекс - {0}, {1}", c, i13);
+
+            Console.WriteLine(); 
+
+            // 14 
+            int[] array14 = UserInput();
+            Console.WriteLine("Максимальный элемент и его индекс - {0}, {1}", array14.Max(), Array.IndexOf(array14, array14.Max());
+
+            Console.WriteLine();
+
+            // 15
+            int[] array15 = UserInput();
+            int[] newArray15 = chetNechet(array15);
+            for (int i = 0; i < newArray15.Length; i++)
+            {
+                Console.Write("{0} ", newArray15[i]);
+            }
+
+            Console.WriteLine(); 
+
+            // 16
+            int[] array16 = UserInput();
+            int min16 = array16.Min();
+            int c16 = 0;
+            for (int i = 0; i < array16.Length; i++)
+            {
+                if (array16[i] < 0 & c16 < 1)
+                {
+                    c16++;
+                }
+                else if (array16[i] < 0 & c16 == 1)
+                {
+                    int j16 = min16;
+                    array16[Array.IndexOf(array16, min16)] = array16[i];
+                    array16[i] = j16;
+                }
+            }
+            Console.WriteLine("Новый массив - {0}", array16); 
+            
+            Console.WriteLine(); 
+
+            // 17
+            int[] array17 = UserInput();
+            Console.WriteLine("Упорядоченный массив: ");
+            foreach (int item in sortMaxtoMin(array17))
+            {
+                Console.Write("{0} ", item);
+            }
+
+            Console.WriteLine(); 
+
+            // 18
+            int[] array18 = UserInput();
+            Console.WriteLine("Упорядоченный массив: ");
+            foreach (int item in sortMintoMax(array18))
+            {
+                Console.Write("{0} ", item);
+            }
+
+            Console.WriteLine(); 
+
+            // 19
+            int[] array19 = UserInput();
+            Console.WriteLine("Новый порядок массива массив: ");
+            Array.Reverse(array19);
+            foreach (int item in array19)
+            {
+                Console.Write("{0} ", item);
+            }
+
+            Console.WriteLine(); 
+
+            // 20
+            int[] array20 = UserInput();
+            array20 = MoveOn(array20, 2);
+            foreach (int item in array20)
+            {
+                Console.Write("{0} ", item);
+            }
+
+            Console.WriteLine(); */
+
+            // 21
+
+
+
+
 
         }
 
