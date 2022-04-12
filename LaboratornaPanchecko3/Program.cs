@@ -4,9 +4,9 @@
     class Program
     {
 
-        static int[] UserInput()
+        static int[] UserInput(int num)
         {
-            Console.WriteLine("Как вы хотите заполнить массив? 1 - вручную, 2 - случайным образом, 3 - через файл");
+            Console.WriteLine("{0}. Как вы хотите заполнить массив? 1 - вручную, 2 - случайным образом, 3 - через файл", num);
             int answer = int.Parse(Console.ReadLine());
             int[] array;
             if (answer == 1)    // Ручной ввод
@@ -296,7 +296,7 @@
         static void Main(string[] args)
         {
             // 1
-            int[] array = UserInput();
+            int[] array = UserInput(1);
             int negative = NegativeAmount(array);
             int positive = PositiveAmount(array);
             double average = AverageSum(array);
@@ -305,7 +305,7 @@
             Console.WriteLine();
 
             // 2
-            int[] array2 = UserInput();
+            int[] array2 = UserInput(2);
             int[] array2_1 = CreateTwoArray(array2).Item1;
             int[] array2_2 = CreateTwoArray(array2).Item2;
             Console.WriteLine("Сумма четного массива - {0};\nСумма нечетного массива - {1}", Sum(array2_1), Sum(array2_2));
@@ -313,7 +313,7 @@
             Console.WriteLine();
 
             //3
-            int[] array3 = UserInput();
+            int[] array3 = UserInput(3);
             int lstP, fstN;
             lstP = LastPositive(array3);
             fstN = FirstNegative(array3);
@@ -329,7 +329,7 @@
             Console.WriteLine();
 
             //4
-            int[] array4 = UserInput();
+            int[] array4 = UserInput(4);
             int max = array4.Max();
             int index = Array.LastIndexOf(array4, max);
             Console.WriteLine("Количество отрицательных элементов перед наибольшим положительным числом - {0}", NegativeAmount(array4[1..index]));
@@ -337,7 +337,7 @@
             Console.WriteLine();
 
             //5
-            int[] array5 = UserInput();
+            int[] array5 = UserInput(5);
             int lstP1, fstP1;
             lstP1 = LastPositive(array5);
             fstP1 = FirstPositive(array5);
@@ -348,13 +348,13 @@
             Console.WriteLine();
 
             //6
-            int[] array6 = UserInput();
+            int[] array6 = UserInput(6);
             Console.WriteLine("Сумма элементов массива - {0}, среднее арифм. - {1}", Sum(array6), AverageSum(array6));
 
             Console.WriteLine();
 
             // 7
-            int[] array7 = UserInput();
+            int[] array7 = UserInput(7);
             int sum = 0;
             foreach (int elem in array7)
             {
@@ -368,13 +368,13 @@
             Console.WriteLine();
 
             // 8
-            int[] array8 = UserInput();
+            int[] array8 = UserInput(8);
             Console.WriteLine("Сумма четных элементов массива - {0}", Sum(CreateTwoArray(array8).Item1));
 
             Console.WriteLine();
 
             // 9
-            int[] array9 = UserInput();
+            int[] array9 = UserInput(9);
             int maxPositive = array9.Max();
             int maxNegativeValue = MaxNegative(array9);
             Console.WriteLine("Максимальный отрицательный - {0}, Максимальный положительный - {1}", maxNegativeValue, maxPositive);
@@ -382,7 +382,7 @@
             Console.WriteLine();
 
             // 10
-            int[] array10 = UserInput();
+            int[] array10 = UserInput(10);
             List<int> indexes = new List<int>();
             for (int i = 0; i < array10.Length; i++)
             {
@@ -400,7 +400,7 @@
             Console.WriteLine();
 
             // 11
-            int[] array11 = UserInput();
+            int[] array11 = UserInput(11);
             double sum1 = 0;
             foreach (int item in array11)
             {
@@ -411,55 +411,67 @@
             Console.WriteLine();
 
             // 12
-            int[] array12 = UserInput();
+            int[] array12 = UserInput(12);
             int c = 0;
             int i12 = -1;
             for (int i = 0; i < array12.Length; i++)
             {
-                if (array12[i] > 0 & c < 3)
+                if (array12[i] > 0 & c < 2)
                 {
                     c++;
                 }
-                else if (array12[i] > 0 & c > 3)
+                else if (array12[i] > 0 & c == 2)
                 {
                     c = array12[i];
                     i12 = i;
                     break;
                 }
             }
-            Console.WriteLine("Третий положительный элемент и его индекс - {0}, {1}", c, i12);
-
+            if (i12 != -1)
+            {
+                Console.WriteLine("Третий положительный элемент и его индекс - {0}, {1}", c, i12);
+            }
+            else
+            {
+                Console.WriteLine("Третьего положительного элемента нет");
+            }
             Console.WriteLine();
 
             // 13
-            int[] array13 = UserInput();
+            int[] array13 = UserInput(13);
             int c13 = 0;
             int i13 = -1;
             for (int i = 0; i < array13.Length; i++)
             {
-                if (array13[i] > 0 & c13 < 3)
+                if (array13[i] > 0 & c13 < 2)
                 {
                     c13++;
                 }
-                else if (array13[i] > 0 & c13 > 3)
+                else if (array13[i] > 0 & c13 == 2)
                 {
                     c13 = array13[i];
                     i13 = i;
                     break;
                 }
             }
-            Console.WriteLine("Третий положительный элемент и его индекс - {0}, {1}", c, i13);
-
+            if (i13 != -1)
+            {
+                Console.WriteLine("Третий положительный элемент и его индекс - {0}, {1}", c13, i13);
+            }
+            else
+            {
+                Console.WriteLine("Третьего положительного элемента нет");
+            }
             Console.WriteLine();
 
             // 14 
-            int[] array14 = UserInput();
+            int[] array14 = UserInput(14);
             Console.WriteLine("Максимальный элемент и его индекс - {0}, {1}", array14.Max(), Array.IndexOf(array14, array14.Max()));
 
             Console.WriteLine();
 
             // 15
-            int[] array15 = UserInput();
+            int[] array15 = UserInput(15);
             int[] newArray15 = chetNechet(array15);
             for (int i = 0; i < newArray15.Length; i++)
             {
@@ -469,7 +481,7 @@
             Console.WriteLine();
 
             // 16
-            int[] array16 = UserInput();
+            int[] array16 = UserInput(16);
             int min16 = array16.Min();
             int c16 = 0;
             for (int i = 0; i < array16.Length; i++)
@@ -485,12 +497,16 @@
                     array16[i] = j16;
                 }
             }
-            Console.WriteLine("Новый массив - {0}", array16);
+            Console.WriteLine("Новый массив");
+            foreach (int item in array16)
+            {
+                Console.Write("{0} ", item);
+            }
 
             Console.WriteLine();
 
             // 17
-            int[] array17 = UserInput();
+            int[] array17 = UserInput(17);
             Console.WriteLine("Упорядоченный массив: ");
             foreach (int item in sortMaxtoMin(array17))
             {
@@ -500,7 +516,7 @@
             Console.WriteLine();
 
             // 18
-            int[] array18 = UserInput();
+            int[] array18 = UserInput(18);
             Console.WriteLine("Упорядоченный массив: ");
             foreach (int item in sortMintoMax(array18))
             {
@@ -510,7 +526,7 @@
             Console.WriteLine();
 
             // 19
-            int[] array19 = UserInput();
+            int[] array19 = UserInput(19);
             Console.WriteLine("Новый порядок массива массив: ");
             Array.Reverse(array19);
             foreach (int item in array19)
@@ -521,7 +537,7 @@
             Console.WriteLine();
 
             // 20
-            int[] array20 = UserInput();
+            int[] array20 = UserInput(20);
             array20 = MoveOn(array20, 2);
             foreach (int item in array20)
             {
@@ -531,7 +547,7 @@
             Console.WriteLine();
 
             // 21
-            int[] array21 = UserInput();
+            int[] array21 = UserInput(21);
 
             List<int> listPos = new List<int>();
             List<int> listNeg = new List<int>();
@@ -560,7 +576,7 @@
             Console.WriteLine();
 
             // 22
-            int[] array22 = UserInput();
+            int[] array22 = UserInput(22);
             int nN22 = array22[FirstNegative(array22)];
             int lN22 = array22[LastNegative(array22)];
             Console.WriteLine("Сумма первого и последнего отрицательного элемента: {0}", nN22 + lN22);
@@ -568,7 +584,7 @@
             Console.WriteLine();
 
             // 23
-            int[] array23 = UserInput();
+            int[] array23 = UserInput(23);
             int f23 = 0;
             int l23 = 0;
             bool f = false;
@@ -598,13 +614,13 @@
             Console.WriteLine();
 
             // 24
-            int[] array24 = UserInput();
+            int[] array24 = UserInput(24);
             Console.WriteLine("Индекс наибольшего - {0}, индекс наименьшего - {1}", Array.IndexOf(array24, array24.Max()), Array.IndexOf(array24, array24.Min()));
 
             Console.WriteLine();
 
             // 25
-            List<int> array25 = UserInput().ToList();
+            List<int> array25 = UserInput(25).ToList();
             int m = 1;
             for (int i = 0; i < 3; i++)
             {
@@ -616,7 +632,7 @@
             Console.WriteLine();
 
             // 26
-            int[] array26 = UserInput();
+            int[] array26 = UserInput(26);
             int s26 = 0;
             for (int i = 0; i < array26.Length; i++)
             {
@@ -631,7 +647,7 @@
             Console.WriteLine();
 
             // 27
-            int[] array27 = UserInput();
+            int[] array27 = UserInput(27);
             int fp27 = array27[FirstPositive(array27)];
             int lp27 = array27[LastNegative(array27)];
             Console.WriteLine("Разница первого положительного и последнего отрицательного элемента - {0}", fp27 - lp27);
@@ -639,7 +655,7 @@
             Console.WriteLine();
 
             // 28
-            int[] array28 = UserInput();
+            int[] array28 = UserInput(28);
             int c28 = 0;
             for (int i = 0; i < array28.Length; i++)
             {
@@ -653,7 +669,7 @@
             Console.WriteLine();
 
             // 29
-            int[] array29 = UserInput();
+            int[] array29 = UserInput(29);
             int max_neg29 = MaxNegative(array29);
             if (max_neg29 != -1)
             {
@@ -668,7 +684,7 @@
             Console.WriteLine();
 
             // 30
-            int[] array30 = UserInput();
+            int[] array30 = UserInput(30);
             int c30 = 0;
             foreach (int i in array30)
             {
